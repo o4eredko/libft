@@ -11,22 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
-
-static int	count_digits(int nbr)
-{
-	int res;
-
-	res = 0;
-	if (nbr <= 0)
-		res++;
-	while (nbr != 0)
-	{
-		nbr /= 10;
-		res++;
-	}
-	return (res);
-}
+#include <libft.h>
 
 char		*ft_itoa(int n)
 {
@@ -34,7 +19,7 @@ char		*ft_itoa(int n)
 	int		len;
 	int		start;
 
-	len = count_digits(n);
+	len = ft_count_digits(n, 10);
 	start = 0;
 	res = (char *)malloc((len + 1) * sizeof(char));
 	if (!res)
