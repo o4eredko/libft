@@ -31,10 +31,9 @@ int		type_id(char c, t_params *params)
 	char	*str;
 	int		i;
 
-	i = 0;
+	i = -1;
 	str = "csduoxpfbr";
-	while (str[i])
-	{
+	while (str[++i])
 		if (c == str[i] || (c == 'i' && str[i] == 'd') ||
 			(c == 'X' && str[i] == 'x') || (c == 'F' && str[i] == 'f'))
 		{
@@ -42,7 +41,5 @@ int		type_id(char c, t_params *params)
 				params->type = c;
 			return (i);
 		}
-		i++;
-	}
 	return (-1);
 }

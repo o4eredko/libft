@@ -42,6 +42,7 @@ int			ft_printf(const char *format, ...)
 {
 	va_list		ap;
 	int			ret;
+	char		*next_arg;
 
 	ret = 0;
 	va_start(ap, format);
@@ -51,9 +52,14 @@ int			ft_printf(const char *format, ...)
 			ret += handle_expression(ap, &format);
 		else
 		{
-			ft_putchar(*format);
-			format++;
-			ret++;
+			if (!(next_arg = ft_strchr(format, '%')))
+			{
+				next_arg = (char*)format;
+				next_arg += ft_strlen(format);
+			}
+			write(1, format, next_arg - format);
+			ret += next_arg - format;
+			format += next_arg - format;
 		}
 	}
 	va_end(ap);

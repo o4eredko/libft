@@ -21,8 +21,8 @@ int	ft_va_putpointer(va_list ap, t_params *params)
 
 	addr = va_arg(ap, uintmax_t);
 	len = (size_t)count_unsigned_digits(addr, 16);
-	len = params->flag & precision && params->precision > (int)len ?
-			params->precision : (int)len;
+	len = (size_t)(params->flag & precision && params->precision > (int)len ?
+			params->precision : (int)len);
 	res_tmp = ft_strnew(len);
 	uint_to_str(res_tmp, addr, 16, params);
 	if (!addr && params->flag & precision && !params->precision)

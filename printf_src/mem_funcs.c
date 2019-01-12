@@ -39,6 +39,7 @@ void		init_params(t_params *params)
 	params->e_convert = 0;
 	params->e_flags = 0;
 	params->flag = 0;
+	params->type = 0;
 }
 
 intmax_t	ft_power(intmax_t nb, int power)

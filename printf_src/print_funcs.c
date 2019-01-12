@@ -12,15 +12,6 @@
 
 #include <ft_printf.h>
 
-void	ft_putnstr(char *str, int n)
-{
-	while (*str && n--)
-	{
-		ft_putchar(*str);
-		str++;
-	}
-}
-
 void	print_padding(int size, char c)
 {
 	while (size-- > 0)

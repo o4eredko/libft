@@ -22,7 +22,7 @@ void	skip_flag_symbols(t_params *params, char **s)
 		len = 1;
 	if (*(*s + 1) == 'x' || *(*s + 1) == 'X' || *(*s + 1) == 'b')
 		len = 2;
-	ft_putnstr(*s, len);
+	write(1, s, (unsigned int)len);
 	params->width -= len;
 	*s += len;
 }
@@ -62,7 +62,7 @@ int		ft_va_putchar(va_list ap, t_params *params)
 	if (params->flag & width)
 		len = params->width > len ? params->width : len;
 	if (params->flag & width && !(params->flag & minus))
-		print_padding(params->width - 1, params->flag & zero ? '0' : ' ');
+		print_padding(params->width - 1, (char)(params->flag & zero ? '0' : ' '));
 	ft_putchar(c);
 	if (params->flag & width && params->flag & minus)
 		print_padding(params->width - 1, ' ');

@@ -76,7 +76,6 @@ int					ft_va_putpointer(va_list ap, t_params *params);
 int					ft_va_putfloat(va_list ap, t_params *params);
 int					ft_va_putbinary(va_list ap, t_params *params);
 int					ft_va_putnonprint(va_list ap, t_params *params);
-void				ft_putnstr(char *str, int n);
 void				print_padding(int size, char c);
 int					ft_format_str(char *s, t_params *params);
 int					print_percent(char c, t_params *params);
